@@ -29,18 +29,9 @@
 		<div class="row">
 			<div class="left-column col-md-4">
 				<div class="post-order-menu btn-group-vertical btn-group-lg" role="group">
-					<a href="#" class="btn btn-default btn-primary">
-						<span class="pull-left">Latest posts</span>
-						<span class="glyphicon glyphicon-menu-right pull-right"></span>
-					</a>
-					<a href="#" class="btn btn-default">
-						<span class="pull-left">Most popular</span>
-						<span class="glyphicon glyphicon-menu-right pull-right"></span>
-					</a>
-					<a href="#" class="btn btn-default">
-						<span class="pull-left">Something</span>
-						<span class="glyphicon glyphicon-menu-right pull-right"></span>
-					</a>
+					<div class="post-list-menu-item" order-by="date">Latest Posts</div>
+					<div class="post-list-menu-item" order-by="likes">Most popular</div>
+					<div class="post-list-menu-item" order-by="comments">Something...</div>
 				</div>
 			</div>
 			<div class="right-column col-md-8">
@@ -72,7 +63,12 @@
 				</ul>
 			</div>
 		</div>
-
+		<script type="text/ng-template" id="/templates/postListMenuItem.html">
+			<a href='#' ng-class='["btn", "btn-default", {"btn-primary": isSelected()}]' ng-click="reOrderPosts()">
+				<span class="pull-left" ng-transclude></span>
+				<span class='glyphicon glyphicon-menu-right pull-right'></span>
+			</a>
+		</script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -80,5 +76,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/mainController.js"></script>
+    <script src="js/directives/postListMenuItem.js"></script>
   </body>
 </html>
