@@ -4,7 +4,7 @@ app.directive("postListMenuItem", [function() {
 		transclude: true,
 		replace: true,
 		scope: true, // create a new scope
-		templateUrl: "/templates/postListMenuItem.html",
+		templateUrl: "/views/postListMenuItem.html",
 		link: function(scope, elem, attrs) {
 			scope.orderBy = attrs.orderBy;
 			scope.isSelected = function() {

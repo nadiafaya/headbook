@@ -7,8 +7,8 @@
 		<div class="left-column col-md-4">
 			<div class="post-order-menu btn-group-vertical btn-group-lg" role="group">
 				<div class="post-list-menu-item" order-by="date">Latest Posts</div>
-				<div class="post-list-menu-item" order-by="likes">Most popular</div>
-				<div class="post-list-menu-item" order-by="comments">Something...</div>
+				<div class="post-list-menu-item" order-by="likes">Most liked</div>
+				<div class="post-list-menu-item" order-by="comments">Most comented</div>
 			</div>
 		</div>
 		<div class="right-column col-md-8">
@@ -40,10 +40,4 @@
 			</ul>
 		</div>
 	</div>
-	<script type="text/ng-template" id="/templates/postListMenuItem.html">
-		<a href='javascript:void(0);' ng-class='["btn", "btn-default", {"btn-primary": isSelected()}]' ng-click="reOrderPosts()">
-			<span class="pull-left" ng-transclude></span>
-			<span class='glyphicon glyphicon-menu-right pull-right'></span>
-		</a>
-	</script>
 </div>
