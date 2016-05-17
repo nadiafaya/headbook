@@ -21,59 +21,15 @@
 
 		<link rel="stylesheet" href="styles.css">
 	</head>
-  	<body class="home container" ng-controller="main">
-    	<div class="jumbotron">
-  			<h1>Headbook!</h1>
-  			<p>Just like Facebook, but better! Check out all of these awesome posts!</p>
-		</div>
-		<div class="row">
-			<div class="left-column col-md-4">
-				<div class="post-order-menu btn-group-vertical btn-group-lg" role="group">
-					<div class="post-list-menu-item" order-by="date">Latest Posts</div>
-					<div class="post-list-menu-item" order-by="likes">Most popular</div>
-					<div class="post-list-menu-item" order-by="comments">Something...</div>
-				</div>
-			</div>
-			<div class="right-column col-md-8">
-				<h2>Latest posts</h2>
-				<br>
-				<ul class="list-unstyled">
-					<li ng-repeat="post in posts">
-						<div class="panel panel-default">
-							<div class="panel-heading">{{post.author}} posted in {{post.date.toLocaleString()}}</div>
-							<div class="panel-body">
-								<p>{{post.content}}</p>
-							</div>
-							<div class="panel-footer">
-								<button type="button" class="btn btn-default" aria-label="Left Align">
-  									<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-  									Like
-								</button>
-								<button type="button" class="btn btn-default" aria-label="Left Align">
-  									<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-  									Comment
-								</button>
-								<button type="button" class="btn btn-default" aria-label="Left Align">
-  									<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-  									Share
-								</button>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<script type="text/ng-template" id="/templates/postListMenuItem.html">
-			<a href='#' ng-class='["btn", "btn-default", {"btn-primary": isSelected()}]' ng-click="reOrderPosts()">
-				<span class="pull-left" ng-transclude></span>
-				<span class='glyphicon glyphicon-menu-right pull-right'></span>
-			</a>
-		</script>
+  	<body class="container">
+  		<div ng-view></div>
+  	</body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/mainController.js"></script>
     <script src="js/directives/postListMenuItem.js"></script>

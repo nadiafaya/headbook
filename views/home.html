@@ -1,0 +1,49 @@
+<div class="home">
+	<div class="jumbotron">
+			<h1>Headbook!</h1>
+			<p>Just like Facebook, but better! Check out all of these awesome posts!</p>
+	</div>
+	<div class="row">
+		<div class="left-column col-md-4">
+			<div class="post-order-menu btn-group-vertical btn-group-lg" role="group">
+				<div class="post-list-menu-item" order-by="date">Latest Posts</div>
+				<div class="post-list-menu-item" order-by="likes">Most popular</div>
+				<div class="post-list-menu-item" order-by="comments">Something...</div>
+			</div>
+		</div>
+		<div class="right-column col-md-8">
+			<h2>Latest posts</h2>
+			<br>
+			<ul class="list-unstyled">
+				<li ng-repeat="post in posts">
+					<div class="panel panel-default">
+						<div class="panel-heading">{{post.author}} posted in {{post.date.toLocaleString()}}</div>
+						<div class="panel-body">
+							<p>{{post.content}}</p>
+						</div>
+						<div class="panel-footer">
+							<button type="button" class="btn btn-default" aria-label="Left Align">
+									<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+									Like
+							</button>
+							<button type="button" class="btn btn-default" aria-label="Left Align">
+									<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+									Comment
+							</button>
+							<button type="button" class="btn btn-default" aria-label="Left Align">
+									<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+									Share
+							</button>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/ng-template" id="/templates/postListMenuItem.html">
+		<a href='javascript:void(0);' ng-class='["btn", "btn-default", {"btn-primary": isSelected()}]' ng-click="reOrderPosts()">
+			<span class="pull-left" ng-transclude></span>
+			<span class='glyphicon glyphicon-menu-right pull-right'></span>
+		</a>
+	</script>
+</div>
