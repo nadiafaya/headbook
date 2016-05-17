@@ -1,0 +1,15 @@
+.home .jumbotron {
+	background-color: #a5bdd2;
+}
+
+.home .left-column .post-order-menu {
+	width: 100%;
+}
+
+.home .left-column .post-order-menu > a {
+	overflow: hidden;
+}
+
+.home .right-column .panel-footer {
+	text-align: right;
+}
